@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Abode Pizza</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Abode Pizza</h1>
+            <nav>
+                <ul>
+                    <li><a href="Welcome.html">Home</a></li>
+                    <li><a href="order online.html">Order Online</a></li>
+                    <li><a href="franchise enquiry.html">Franchise Enquiry</a></li>
+                    <li><a href="store locator.html">Store Locator</a></li>
+                    <li><a href="contact us.html">Contact Us</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="payment-section">
+            <h2>Choose Your Payment Method</h2>
+            <p>Complete your order by selecting a payment method below.</p>
+
+            <div class="payment-options">
+                <!-- Google Pay -->
+                <a href="https://pay.google.com" target="_blank" class="payment-method">
+                    <img src="img/gpay.png" alt="Google Pay" class="payment-logo">
+                </a>
+
+                <!-- PhonePe -->
+                <a href="https://www.phonepe.com" target="_blank" class="payment-method">
+                    <img src="img/phonepe.png" alt="PhonePe" class="payment-logo">
+                </a>
+
+                <!-- Paytm -->
+                <a href="https://paytm.com" target="_blank" class="payment-method">
+                    <img src="img/paytm.png" alt="Paytm" class="payment-logo">
+                </a>
+            </div>
+
+            <div class="payment-details">
+                <form action="#" method="post" class="payment-form">
+                    <div class="form-group">
+                        <label for="card-name">Cardholder Name</label>
+                        <input type="text" id="card-name" name="card-name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-number">Card Number</label>
+                        <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9876 5432" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="expiration-date">Expiration Date</label>
+                        <input type="month" id="expiration-date" name="expiration-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Complete Payment</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Abode Pizza. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

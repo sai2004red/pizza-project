@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Locator - Abode Pizza</title>
+    <link rel="stylesheet" href="store locator.css">
+    <!-- Include Leaflet.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Abode Pizza</h1>
+            <nav>
+                <ul>
+                    <li><a href="Welcome.html">Home</a></li>
+                    <li><a href="order online.html">Order Online</a></li>
+                    <li><a href="">Franchise Enquiry</a></li>
+                    <li><a href="store locator.html" class="active">Store Locator</a></li>
+                    <li><a href="contact us.html">Contact Us</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="store-locator">
+            <h2>Find Your Nearest Store</h2>
+            <p>Use the map to locate your nearest Abode Pizza store.</p>
+            
+            <!-- Map Container -->
+            <div class="store-map">
+                <div id="map"></div> <!-- Interactive map will render here -->
+            </div>
+
+            <section class="store-list">
+                <h3>Our Stores</h3>
+                <ul>
+                    <li><strong>New York:</strong> 123 Pizza Ave, New York, NY</li>
+                    <li><strong>Los Angeles:</strong> 456 Pizza Blvd, Los Angeles, CA</li>
+                    <li><strong>Chicago:</strong> 789 Pizza St, Chicago, IL</li>
+                    <li><strong>Miami:</strong> 101 Pizza Rd, Miami, FL</li>
+                </ul>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Abode Pizza. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Include Leaflet.js JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([37.0902, -95.7129], 4); // USA Centered
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Store locations with coordinates and names
+        const stores = [
+            { name: "New York Store", coords: [40.7128, -74.0060] },
+            { name: "Los Angeles Store", coords: [34.0522, -118.2437] },
+            { name: "Chicago Store", coords: [41.8781, -87.6298] },
+            { name: "Miami Store", coords: [25.7617, -80.1918] }
+        ];
+
+        // Add markers for each store
+        stores.forEach(store => {
+            L.marker(store.coords)
+                .addTo(map)
+                .bindPopup(`<b>${store.name}</b><br>Store Location`)
+                .openPopup();
+        });
+    </script>
+</body>
+</html>

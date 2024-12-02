@@ -1,0 +1,165 @@
+/* Reset margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic page styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+#header {
+    background-color: green;
+    color: white;
+    height: 100px; /* Increased height for a larger header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#header #logo {
+    height: 60px; /* Adjust logo size */
+    margin-right: 15px; /* Space between logo and header name */
+}
+
+#header span {
+    font-size: 36px; /* Increased font size for the header name */
+    font-weight: bold;
+}
+
+/* Sidebar styling */
+#sidebar {
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #042331;
+    transition: left 0.5s ease;
+    overflow-y: auto;
+}
+
+#sidebar header {
+    background-color: #063146;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 22px;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sidebar ul li a {
+    color: white;
+    display: block;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+#sidebar ul li a:hover {
+    background-color: #575757;
+    padding-left: 40px;
+}
+
+#sidebar ul li a i {
+    margin-right: 15px;
+}
+
+/* Sidebar toggle button */
+#check {
+    display: none;
+}
+
+label #btn,
+label #cancel {
+    position: absolute;
+    cursor: pointer;
+    background-color: #042331;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 25px;
+    color: white;
+    top: 20px;
+    transition: all 0.5s;
+}
+
+label #btn {
+    left: 20px;
+}
+
+label #cancel {
+    left: -250px;
+    top: 25px;
+    color: #0a5275;
+    font-size: 30px;
+}
+
+/* Show the sidebar when the checkbox is checked */
+#check:checked ~ #sidebar {
+    left: 0;
+}
+
+#check:checked ~ label #btn {
+    left: 250px;
+    opacity: 0;
+}
+
+#check:checked ~ label #cancel {
+    left: 200px;
+}
+
+/* Main content area */
+#content {
+    margin-left: 0;
+    padding: 20px;
+}
+
+#content .intro h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+#content .intro p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Footer styling */
+#footer {
+    background-color: green;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    #sidebar {
+        width: 200px;
+    }
+
+    #content {
+        margin-left: 0;
+    }
+
+    #content .products {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #content .product {
+        margin-bottom: 20px;
+    }
+}
